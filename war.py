@@ -23,12 +23,19 @@ comp_cards = cards[26:]
 # rules
 
 print("This is War! Let me explain the rules.")
+time.sleep(3)
 print("I (the computer) will receive 26 cards, and you (the human) will receive 26 cards as well.")
+time.sleep(3)
 print("We will each turn up our top cards at the same time, and whoever has the higher card") 
+time.sleep(3)
 print("will take both cards and put them at the bottom of their deck.")
+time.sleep(3)
 print("If the cards have the same value, it is war! We will each put three cards facedown and one faceup,")
+time.sleep(3)
 print("and the person whose faceup card is higher will take all 8 cards.")
+time.sleep(3)
 print("Whoever collects more cards after 10 rounds wins.")
+time.sleep(3)
 
 # ready input
 
