@@ -7,16 +7,18 @@ import time
 # cards
 # colors don't matter
 
-values = list(range(2,15))
-suits = ["clubs", "hearts", "diamonds", "spades"]
-face_cards = {
-    11: 'Jack',
-    12: 'Queen',
-    13: 'King',
-    14: 'Ace'
-}
+cards = []
+suits = ['hearts', 'diamonds', 'spades', 'clubs']
 
-# random.shuffle(cards)
+for i in range(1,14):
+    for j in range(0,4):
+        cards.append([i,j])
+
+random.seed(0)
+random.shuffle(cards)
+
+human_cards = cards[:26]
+comp_cards = cards[26:]
 
 # rules
 
@@ -26,7 +28,7 @@ print("We will each turn up our top cards at the same time, and whoever has the 
 print("will take both cards and put them at the bottom of their deck.")
 print("If the cards have the same value, it is war! We will each put three cards facedown and one faceup,")
 print("and the person whose faceup card is higher will take all 8 cards.")
-print("Whoever collects all of the cards wins.")
+print("Whoever collects more cards after 10 rounds wins.")
 
 # ready input
 
@@ -36,19 +38,10 @@ while ready == 'n' or ready != 'y':
 if ready == 'y':
     print("Let's play!")
     
-# dealt cards
-# random.sample makes sure the same card cannot be chosen twice
-
-humancards = []
-# humancards.append([random.sample(cards,26)])
-
-computercards = []
-# computercards.append([random.sample(cards,26)])
 
 # the game
 
-
-first_human = {random.choice(humancards)}
-first_comp = {random.choice(computercards)}
-first_cards = (f"Your card: {first_human} My card: {first_comp})")
-
+def war(human, computer):
+    human = []
+    computer = []
+    for i in range(1,11):
