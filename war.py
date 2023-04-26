@@ -34,6 +34,8 @@ print("If the cards have the same value, it is war! We will each put three cards
 time.sleep(3)
 print("and the person whose faceup card is higher will take all 8 cards.")
 time.sleep(3)
+print("If the cards have the same value again, the round is a tie!")
+time.sleep(3)
 print("Whoever collects more cards after 10 rounds wins.")
 time.sleep(3)
 
