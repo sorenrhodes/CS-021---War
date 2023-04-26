@@ -22,7 +22,7 @@ comp_cards = cards[26:]
 
 # rules
 
-print("This is War! Let me explain the rules.")
+print("This is the Game of War! Let me explain the rules.")
 time.sleep(3)
 print("I (the computer) will receive 26 cards, and you (the human) will receive 26 cards as well.")
 time.sleep(3)
