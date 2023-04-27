@@ -54,76 +54,42 @@ print(f"My card: {comp_cards[0][0]} of {comp_cards[0][1]}")
 human = []
 computer = []
 
-human.append(human_cards[0][0])
-human.append(human_cards[1][0])
-human.append(human_cards[2][0])
-human.append(human_cards[3][0])
-human.append(human_cards[4][0])
-human.append(human_cards[5][0])
-human.append(human_cards[6][0])
-human.append(human_cards[7][0])
-human.append(human_cards[8][0])
-human.append(human_cards[9][0])
-human.append(human_cards[10][0])
-human.append(human_cards[11][0])
-human.append(human_cards[12][0])
-human.append(human_cards[13][0])
-human.append(human_cards[14][0])
-human.append(human_cards[15][0])
-human.append(human_cards[16][0])
-human.append(human_cards[17][0])
-human.append(human_cards[18][0])
-human.append(human_cards[19][0])
-human.append(human_cards[20][0])
-human.append(human_cards[21][0])
-human.append(human_cards[22][0])
-human.append(human_cards[23][0])
-human.append(human_cards[24][0])
-human.append(human_cards[25][0])
-human.append(human_cards[26][0])
+human.append(human_cards[0:26][0])
+computer.append(comp_cards[0:26][0])
 
-
-computer.append(comp_cards[0][0])
-computer.append(comp_cards[1][0])
-computer.append(comp_cards[2][0])
-computer.append(comp_cards[3][0])
-computer.append(comp_cards[4][0])
-computer.append(comp_cards[5][0])
-computer.append(comp_cards[6][0])
-computer.append(comp_cards[7][0])
-computer.append(comp_cards[8][0])
-computer.append(comp_cards[9][0])
-computer.append(comp_cards[10][0])
-computer.append(comp_cards[11][0])
-computer.append(comp_cards[12][0])
-computer.append(comp_cards[13][0])
-computer.append(comp_cards[14][0])
-computer.append(comp_cards[15][0])
-computer.append(comp_cards[16][0])
-computer.append(comp_cards[17][0])
-computer.append(comp_cards[18][0])
-computer.append(comp_cards[19][0])
-computer.append(comp_cards[20][0])
-computer.append(comp_cards[21][0])
-computer.append(comp_cards[22][0])
-computer.append(comp_cards[23][0])
-computer.append(comp_cards[24][0])
-computer.append(comp_cards[25][0])
-computer.append(comp_cards[26][0])
+# the two variables i, e is crashing the code, but not sure why yet
 
 for i, e in range(1,11):
+    count = -1
+    count += 1
+    while count != 10:
+        print(f"Card {count}!")
+        time.sleep(3)
+        print(f"Your card: {human[count]} of {human_cards[0][count + 1]}")
+        time.sleep(3)
+        print(f"My card: {computer[count]} of {comp_cards[0][count + 1]}")
     if i in human > e in computer:
         human.pop(i)
         human.append(i)
         human.append(e)
+        computer.pop(e)
     elif e in computer > i in human:
         computer.pop(e)
         computer.append(e)
         computer.append(i)
+        human.pop(i)
     elif e in computer == i in human:
-        if computer[4] > human[4]:
-            computer.pop(1)
-            computer.pop(2)
-            computer.pop(3)
-            computer.pop(4)
-        # need to figure out how to write a range of indices
+        if computer[4] > human[4]:         # need to print the fourth card instead of the first card, since first three are face down
+            computer.pop(computer[1:4])
+            computer.append(computer[1:4])
+            computer.append(human[1:4])
+            human.pop(human[1:4])
+        elif human[4] > computer[4]:
+            human.pop(human[1:4])
+            human.append(human[1:4])
+            human.append(computer[1:4])
+            computer.pop(computer[1:4])
+    if len(human) > len(computer):
+        print("Game over! You win!")
+    if len(computer) > len(human):
+        print("Game over! I win!")
