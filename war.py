@@ -8,7 +8,7 @@ import time
 # colors don't matter
 
 cards = []
-suits = ['hearts', 'diamonds', 'spades', 'clubs']
+suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
 
 for i in range(2,15):
     for j in suits:
@@ -32,7 +32,7 @@ print("will take both cards and put them at the bottom of their deck.")
 time.sleep(2.5)
 print("If the cards have the same value, it is war! We will each put three cards facedown and one faceup,")
 time.sleep(2.5)
-print("and the person whose faceup card is higher will take all 10 cards.")
+print("and the person whose faceup card is higher will take all 14 cards.")
 time.sleep(2.5)
 print("Whoever collects more cards after 10 rounds wins.")
 
@@ -62,21 +62,21 @@ i = 0
 count = 0
 while count < 10:
     print(f"Card {i+1}!")
-    time.sleep(3)
+    time.sleep(2)
     print(f"Your card: {human[i]} of {human_cards[i][1]}")
-    time.sleep(3)
+    time.sleep(2)
     print(f"My card: {computer[i]} of {comp_cards[i][1]}")
-    time.sleep(3)
+    time.sleep(2)
     if human[i] > computer[i]:
         human_won.append(human[i])
         human_won.append(computer[i])
-        print("Your card is higher!")
-        time.sleep(3)
+        print("Your card is higher! You win this round!")
+        time.sleep(2)
     elif computer[i] > human[i]:
         comp_won.append(human[i])
         comp_won.append(computer[i])
-        print("My card is higher!")
-        time.sleep(3)
+        print("My card is higher! I win this round!")
+        time.sleep(2)
     elif computer[i] == human[i]:
         print("Our cards are equal!")
         print(f"Tie breaker cards! My card: {computer[i+4]} Your card: {human[i+4]}")
@@ -84,14 +84,14 @@ while count < 10:
             comp_won.append(computer[i+4])
             comp_won.append(human[i+4])
             i += 3
-            print("My card is higher!")
-            time.sleep(3)
+            print("My card is higher! I win this round!")
+            time.sleep(2)
         elif human[i+4] > computer[i+4]:
             human_won.append(human[i:i+4])
             human_won.append(computer[i:i+4])
             i += 3
-            print("Your card is higher!")
-            time.sleep(3)
+            print("Your card is higher! You win this round!")
+            time.sleep(2)
     i += 1
     count += 1
 if len(human_won) > len(comp_won):
