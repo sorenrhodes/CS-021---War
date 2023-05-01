@@ -8,7 +8,7 @@ import time
 # colors don't matter
 
 cards = []
-suits = ['hearts', 'diamonds', 'spades', 'clubs']
+suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
 
 d = {11: "Jack",
      12: "Queen",
@@ -80,27 +80,29 @@ while count < 10:
     if human[i] > computer[i]:
         human_won.append(human[i])
         human_won.append(computer[i])
-        print("Your card is higher!")
+        print("Your card is higher! You Win!")
         time.sleep(3)
     elif computer[i] > human[i]:
         comp_won.append(human[i])
         comp_won.append(computer[i])
-        print("My card is higher!")
+        print("My card is higher! I Win!")
         time.sleep(3)
     elif computer[i] == human[i]:
         print("Our cards are equal!")
-        print(f"Tie breaker cards! My card: {computer[i+4]} Your card: {human[i+4]}")
+        print(f"Tie breaker cards!")
+        print(f"My card: {computer[i+4]} of {comp_cards[i+4][1]}")
+        print(f"Your card: {human[i+4]} of {human_cards[i+4][1]}")
         if computer[i+4] > human[i+4]:         
             comp_won.append(computer[i+4])
             comp_won.append(human[i+4])
             i += 3
-            print("My card is higher!")
+            print("My card is higher! I Win!")
             time.sleep(3)
         elif human[i+4] > computer[i+4]:
             human_won.append(human[i:i+4])
             human_won.append(computer[i:i+4])
             i += 3
-            print("Your card is higher!")
+            print("Your card is higher! You Win!")
             time.sleep(3)
     i += 1
     count += 1
